@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+    
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=1, minimal-ui">
+    </head>
+    
+    <body>
+        <img src="images/logo.jpg" style="background-color:#006B8B">
+        <ul>
+            <br>  
+            <br>  
+            
+            <li><a class="button" href="lineas.html">Todas las líneas</a></li>        
+              
+            <br> 
+            <br>
+            
+            <li>
+                <input type="text" id="lineaBuscada" placeholder="Introduzca una línea" style="text-align:center">
+                <a class="button" onclick="myFunction()">Buscar línea</a>
+                <script>
+                function myFunction() {
+                    
+                    var expresion =/^[0-9]+$/;
+                    
+                    var valor = document.getElementById("lineaBuscada").value;
+                    
+                    if ( valor == ""){}
+                    
+                    else if (!valor.match(expresion)){
+                        alert("Introduzca un número, por favor.");
+                    }            
+                    
+                    else{
+            
+                        var valorIntroducido = parseInt(valor);
+                        
+                        var arrayLineas = [1,4,5,6,8,10,11,12,13,15,18,19,20,21,22,23,24,25,26,27,30,32,33,34,35,36,38,39,40,41,43,45,50,52,54,55,56,57,58,59,60,66,70,72,73,74,75,80,84,85,86,90,91,101,102,103,105,106,107,108,116,117,123,124,126,127,204,205,206,210,211,213,214,215,216,218,220,222,223,224,229,232,233,234,250,251,255,256,301,302,303,304,305,306,307,308,311,313,316,317,318,319,320,323,324,325,327,328,335,350];
+
+                        var lineaEnArray = arrayLineas.indexOf(valorIntroducido) + 1 ;
+
+                        if (lineaEnArray == 0){
+                            alert("La línea no existe.");
+                        }
+
+                        else{
+                            document.write('<img src="images/('+lineaEnArray+').png">');
+                        }
+                        
+                    }
+                    
+                                    
+                }
+                </script>
+            
+            </li>
+               
+            <br>  
+            
+            <li><a class="button" href="buscador.html">Buscador Origen-Destino</a></li>       
+            
+            
+             <br><br>
+            <div id="idiomas">
+            <li>
+                <a href="indexENG.html">    <img src="images/eng.png" style="width:20%; position:relative;
+   float: left;  left: 15%;"> </a>
+                <a href="index.html"> <img src="images/esp.png" style="width:20%" align="center"> </a>
+                <a href="indexDE.html">  <img src="images/de.png"  style="width:20%; position:relative;
+   float: right; right: 15%;"> </a>
+            </li>
+            </div>
+
+        </ul>   
+    </body>
+        
+</html>
